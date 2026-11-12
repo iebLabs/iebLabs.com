@@ -1,17 +1,495 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="scroll-smooth dark">
 <head>
   <meta charset="UTF-8">
-  <title>IEB Labs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iebLabs | Tech-Studio, B2B-Lösungen & Ibo's Engineering Lab</title>
+  <meta name="description" content="iebLabs – High-End Webseiten, DSGVO-Fixes, Google Review-Booster, Android Custom-ROMs, E-Scooter Tuning & 12 kostenlose Micro-Tools by Ibo.">
+  <link rel="icon" type="image/png" href="avatar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5103550567947274" crossorigin="anonymous"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+            },
+            accent: {
+              400: '#38bdf8',
+              500: '#0ea5e9',
+            }
+          }
+        }
+      }
+    }
+  </script>
   <style>
-    body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background: #0f172a; color: white; }
-    h1 { font-size: 3rem; }
+    .glow-bg {
+      background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.18) 0%, rgba(14, 165, 233, 0.08) 40%, transparent 70%);
+    }
+    .neon-border {
+      box-shadow: 0 0 25px rgba(99, 102, 241, 0.25);
+    }
+    .cyber-card {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
   </style>
 </head>
-<body>
-  <div>
-    <h1>Willkommen bei IEB Labs</h1>
-    <p>Hier entsteht gerade etwas Neues.</p>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- TOP BANNER -->
+  <div class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 border-b border-slate-800 text-center py-2 text-xs text-slate-300 flex items-center justify-center gap-3 px-4">
+    <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-mono text-[11px] font-bold">
+      <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> ONLINE
+    </span>
+    <span>Willkommen im Ecosystem von <strong>iebLabs</strong> – Alles rund um Code, Web, Hardware & Tuning by <strong>ibo</strong>.</span>
   </div>
+
+  <!-- NAVBAR -->
+  <header class="fixed top-8 inset-x-0 z-50 bg-slate-950/85 backdrop-blur-md border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="avatar.png" alt="iebLabs Logo" class="w-10 h-10 rounded-xl object-cover border border-red-500/40 shadow-lg shadow-red-500/20">
+        <div>
+          <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-white via-slate-100 to-slate-400 bg-clip-text text-transparent">iebLabs</span>
+          <span class="text-[10px] text-red-400 font-mono block -mt-1 font-bold tracking-wider">300 KM RADIUS • IBO</span>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
+        <a href="#about-ibo" class="hover:text-white transition">Über ibo</a>
+        <a href="#services" class="hover:text-white transition">Business & Web</a>
+        <a href="#checkmyweb" class="text-cyan-400 hover:text-cyan-300 transition font-medium">CheckMyWeb</a>
+        <a href="#hardware-lab" class="hover:text-white transition">Android & E-Scooter</a>
+        <a href="tools.html" class="text-red-400 hover:text-red-300 font-bold transition flex items-center gap-1.5">
+          <i class="fa-solid fa-screwdriver-wrench"></i> Tools &amp; Rechner
+        </a>
+        <a href="profile.html" class="hover:text-white transition flex items-center gap-1">
+          <i class="fa-solid fa-user"></i> Mein Profil
+        </a>
+        <a href="#roles" class="hover:text-white transition">Ränge</a>
+        <a href="#contact" class="hover:text-white transition">Kontakt</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="https://github.com/iebLabs" target="_blank" class="p-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 transition" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="#contact" class="px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold shadow-lg shadow-brand-600/30 transition transform active:scale-95">
+          ibo kontaktieren
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION WITH CONCEPT ART & MASTER ARCHITECT BADGE -->
+  <section class="relative pt-36 pb-20 glow-bg overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      
+      <!-- STATUS BADGE -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-500/40 bg-brand-500/10 text-brand-300 text-xs font-mono font-bold mb-6">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>iebLabs // ibo • Master Engineer & Core Architect</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight max-w-4xl mx-auto leading-tight">
+        Egal welches Problem: <br>
+        <span class="bg-gradient-to-r from-brand-400 via-indigo-300 to-accent-400 bg-clip-text text-transparent">iebLabs & ibo regeln das.</span>
+      </h1>
+
+      <p class="mt-6 text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto font-normal">
+        Das Tech-Zuhause für High-End Webseiten, rechtssichere DSGVO-Checks, 5-Sterne Google-Booster, Android Bootloader Unlocks & E-Scooter Firmware-Tuning.
+      </p>
+
+      <!-- CTA BUTTONS -->
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <a href="#contact" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white font-bold shadow-xl shadow-brand-600/30 transition">
+          🚀 Mit ibo in Kontakt treten
+        </a>
+        <a href="microtools/index.html" class="px-8 py-3.5 rounded-xl border border-slate-700 bg-slate-900/80 hover:bg-slate-800 text-white font-semibold transition flex items-center gap-2">
+          <span>🛠️ 12 Kostenlose Micro-Tools</span>
+          <span class="text-xs bg-brand-500/20 text-brand-400 px-2 py-0.5 rounded-full font-mono">NEU</span>
+        </a>
+      </div>
+
+      <!-- CONCEPT ARTWORK SHOWCASE -->
+      <div class="mt-14 max-w-4xl mx-auto rounded-3xl overflow-hidden border border-slate-800 shadow-2xl neon-border relative group">
+        <img src="hero-concept.jpg" alt="iebLabs Tech Lab by ibo" class="w-full h-auto object-cover transform group-hover:scale-[1.01] transition duration-500">
+        <div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="text-left">
+            <span class="text-xs font-mono text-brand-400 font-bold uppercase tracking-wider">iebLabs Central Command</span>
+            <p class="text-sm text-slate-200 font-medium">Volle Kontrolle über Code, Netzwerke, Micro-Services & Hardware</p>
+          </div>
+          <div class="flex gap-2">
+            <span class="px-3 py-1 rounded-lg bg-slate-900/80 border border-slate-700 text-xs font-mono text-slate-300">Fastboot Active</span>
+            <span class="px-3 py-1 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-xs font-mono text-emerald-400">ECU Tuner 100%</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MASTER PROFILE: WER IST IBO? -->
+  <section id="about-ibo" class="py-20 border-t border-slate-800/80 bg-slate-900/30">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="p-8 sm:p-12 rounded-3xl cyber-card border border-brand-500/30 relative">
+        <div class="flex flex-col md:flex-row items-start md:items-center gap-8">
+          <img src="avatar.png" alt="ibo - iebLabs" class="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl object-cover shadow-2xl shadow-brand-500/40 border border-brand-500/40 shrink-0">
+          <div>
+            <div class="flex items-center gap-3 flex-wrap">
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white">ibo / iebLabs</h2>
+              <span class="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 font-mono text-xs font-bold">
+                👑 ADMIN & CORE ARCHITECT
+              </span>
+            </div>
+            <p class="text-slate-300 text-base mt-4 leading-relaxed">
+              "Ich mache keine halben Sachen. Egal ob dein Firmenauftritt neue Kunden bringen muss, ein veraltetes Android-Handy mit Custom-ROMs wieder rennen soll, oder dein E-Scooter Controller am Berg schlapp macht: <strong>Ich kümmere mich darum.</strong> Wer mich im Kontaktbuch hat, hat die direkte Abkürzung für jedes digitale & technische Problem."
+            </p>
+            <div class="mt-6 flex flex-wrap gap-2 text-xs font-mono">
+              <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg border border-slate-700">⚡ Web & Fullstack</span>
+              <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg border border-slate-700">📱 Android Unlocking</span>
+              <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg border border-slate-700">🛴 E-Scooter Firmware</span>
+              <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg border border-slate-700">🛡️ DSGVO & Compliance</span>
+              <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg border border-slate-700">⭐ Google Review Engine</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DAS POWER-PORTFOLIO (3 SÄULEN) -->
+  <section id="services" class="py-24 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-xs uppercase font-mono tracking-widest text-brand-400 font-bold">Leistungsumfang & Allround-Service</h2>
+        <h3 class="text-3xl sm:text-4xl font-extrabold mt-3">Fürs Digitale, Haus, Garten & das Leben – ich packe an</h3>
+        <p class="text-slate-400 text-sm mt-3">Standort Braunschweig • Vor Ort in der Region & mit Termin auch deutschlandweit verfügbar</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- SÄULE 1: HAUS, GARTEN & ALLTAGSHELFEN -->
+        <div class="p-6 rounded-3xl cyber-card border border-emerald-500/40 hover:border-emerald-400 transition flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl mb-5">
+              🌿
+            </div>
+            <h4 class="text-lg font-bold mb-2">Haus, Garten & Alltag</h4>
+            <p class="text-slate-400 text-xs leading-relaxed mb-4">
+              Schnelle und kräftige Unterstützung: Rasenmähen, Heckenschnitt, Entsorgung, Umzugshilfe, IKEA-Möbelaufbau & alltägliche Erledigungen.
+            </p>
+            <ul class="text-xs space-y-1.5 text-slate-300 font-mono">
+              <li>✓ Rasen-, Hecken- & Grünschnitt</li>
+              <li>✓ Umzugshelfer & Tragearbeiten</li>
+              <li>✓ Möbelmontage & Kleinreparaturen</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/491775822380?text=Hallo%20ibo,%20ich%20brauche%20Hilfe%20bei..." class="mt-6 w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs text-center transition flex items-center justify-center gap-1.5">
+            <i class="fab fa-whatsapp"></i> Hilfe anfragen
+          </a>
+        </div>
+        
+        <!-- SÄULE 2: B2B & WEB -->
+        <div class="p-6 rounded-3xl cyber-card border border-slate-800 hover:border-brand-500/50 transition flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center text-2xl mb-5">
+              🌐
+            </div>
+            <h4 class="text-lg font-bold mb-2">Websites & B2B-Tools</h4>
+            <p class="text-slate-400 text-xs leading-relaxed mb-4">
+              High-Performance Webseiten für Betriebe & Selbstständige. Inklusive Google-Bewertungsbooster (5-Sterne Fokus) und DSGVO-Audit.
+            </p>
+            <ul class="text-xs space-y-1.5 text-slate-300 font-mono">
+              <li>✓ Google My Business Booster</li>
+              <li>✓ 24h DSGVO-Audit & Fixes</li>
+              <li>✓ Moderne Landingpages</li>
+            </ul>
+          </div>
+          <a href="#contact" class="mt-6 w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs text-center border border-slate-700 transition">
+            Details ansehen
+          </a>
+        </div>
+
+        <!-- SÄULE 3: ANDROID & MOBILE MODS -->
+        <div id="hardware-lab" class="p-6 rounded-3xl cyber-card border border-slate-800 hover:border-accent-500/50 transition flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-accent-500/20 text-accent-400 flex items-center justify-center text-2xl mb-5">
+              📱
+            </div>
+            <h4 class="text-lg font-bold mb-2">Android & Smartphone</h4>
+            <p class="text-slate-400 text-xs leading-relaxed mb-4">
+              Schluss mit trägen Geräten. Professioneller Bootloader-Unlock, Custom-ROMs (LineageOS), Entmüllung & Datenrettung.
+            </p>
+            <ul class="text-xs space-y-1.5 text-slate-300 font-mono">
+              <li>✓ Bootloader Unlock & Rooting</li>
+              <li>✓ Custom-ROMs für alte Handys</li>
+              <li>✓ Akku & Performance Boost</li>
+            </ul>
+          </div>
+          <a href="#contact" class="mt-6 w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs text-center border border-slate-700 transition">
+            Details ansehen
+          </a>
+        </div>
+
+        <!-- SÄULE 4: E-SCOOTER & HARDWARE TUNING -->
+        <div class="p-6 rounded-3xl cyber-card border border-slate-800 hover:border-indigo-500/50 transition flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-2xl mb-5">
+              🛴
+            </div>
+            <h4 class="text-lg font-bold mb-2">E-Scooter & PC-Tuning</h4>
+            <p class="text-slate-400 text-xs leading-relaxed mb-4">
+              Controller-Modifikationen, Firmware-Flashen für Xiaomi/Ninebot & Co. Sowie High-End Custom PC-Builds & Fehlerdiagnose.
+            </p>
+            <ul class="text-xs space-y-1.5 text-slate-300 font-mono">
+              <li>✓ Drehmoment & Bergauf-Power</li>
+              <li>✓ Controller- & Dashboard-Service</li>
+              <li>✓ Gaming-PCs & Reparatur</li>
+            </ul>
+          </div>
+          <a href="#contact" class="mt-6 w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs text-center border border-slate-700 transition">
+            Details ansehen
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 MICRO-TOOLS TEASER (LINK ZU UNTERSEITE) -->
+  <section class="py-20 border-t border-slate-800 bg-slate-900/40">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="p-8 sm:p-12 rounded-3xl cyber-card border border-brand-500/40 flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div>
+          <span class="text-xs font-mono text-emerald-400 font-bold uppercase tracking-wider">Kostenloser Mehrwert für alle</span>
+          <h3 class="text-2xl sm:text-4xl font-extrabold text-white mt-2">
+            12 Smarte Web-Apps &amp; Micro-Tools
+          </h3>
+          <p class="text-slate-400 text-sm mt-3 max-w-xl">
+            Wir haben praktische Alltags- und Finanzrechner gebaut: AbfindungsDeal, MietSenker, ElterngeldPlus, HandwerkerDeal, UrlaubsPuffer uvm. 100% datenschutzfreundlich und direkt im Browser nutzbar.
+          </p>
+        </div>
+        <a href="tools.html" class="px-8 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-extrabold text-sm shadow-xl shadow-emerald-500/20 transition whitespace-nowrap">
+          🚀 Zur Tools- &amp; Rechner-Suite &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERAKTIVE VORHER/NACHHER-SHOWCASE -->
+  <section class="py-20 border-t border-slate-800 bg-slate-950">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-mono text-emerald-400 font-bold uppercase tracking-wider">Echte Ergebnisse vor Ort</span>
+        <h3 class="text-3xl font-extrabold text-white mt-2">Vorher &amp; Nachher: Macher am Werk</h3>
+        <p class="text-slate-400 text-xs mt-2">Ziehe den Schieberegler, um die Transformation zu sehen:</p>
+      </div>
+
+      <div class="p-8 rounded-3xl cyber-card border border-slate-800">
+        <div class="relative w-full h-80 sm:h-96 rounded-2xl overflow-hidden select-none border border-slate-700" id="comparisonContainer">
+          <!-- NACHHER BILD (UNTEN) -->
+          <div class="absolute inset-0 bg-gradient-to-br from-emerald-950 via-slate-900 to-slate-950 flex flex-col items-center justify-center text-center p-6">
+            <span class="text-4xl sm:text-6xl mb-3">✨🌿</span>
+            <span class="text-xl sm:text-2xl font-black text-emerald-400">NACHHER: Saubere Arbeit</span>
+            <p class="text-xs text-slate-300 max-w-md mt-2">Rasen penibel gemäht, Hecken messerscharf geschnitten, Grünschnitt restlos entsorgt. Bereit zum Genießen.</p>
+          </div>
+          <!-- VORHER BILD (OBEN, MIT CLIP-PATH) -->
+          <div class="absolute inset-0 bg-gradient-to-br from-amber-950 via-stone-900 to-slate-950 flex flex-col items-center justify-center text-center p-6 border-r-2 border-red-500" id="beforeLayer" style="width: 50%;">
+            <span class="text-4xl sm:text-6xl mb-3">🌾⚡</span>
+            <span class="text-xl sm:text-2xl font-black text-amber-400">VORHER: Wildwuchs &amp; Chaos</span>
+            <p class="text-xs text-slate-300 max-w-md mt-2">Zugewucherte Beete, 1 Meter hohes Gras, sperriger Grünschnitt und kein Durchblick mehr.</p>
+          </div>
+          <!-- SCHIEBEREGLER INPUT -->
+          <input type="range" min="0" max="100" value="50" id="sliderRange" class="absolute inset-0 opacity-0 cursor-ew-resize w-full h-full z-20">
+          <!-- VISUELLE TRENNLINIE -->
+          <div id="sliderHandle" class="absolute top-0 bottom-0 w-1 bg-red-500 pointer-events-none z-10 flex items-center justify-center" style="left: 50%;">
+            <span class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg text-xs font-bold font-mono">↔</span>
+          </div>
+        </div>
+        <script>
+          const slider = document.getElementById('sliderRange');
+          const before = document.getElementById('beforeLayer');
+          const handle = document.getElementById('sliderHandle');
+          slider.oninput = (e) => {
+            const val = e.target.value;
+            before.style.width = val + '%';
+            handle.style.left = val + '%';
+          };
+        </script>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHECKMYWEB (B2B SCANNER & LEAD MAGNET) -->
+  <section id="checkmyweb" class="py-20 border-t border-slate-800 bg-slate-900/30">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <span class="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Kostenloser Firmen-Check</span>
+      <h3 class="text-3xl font-extrabold text-white mt-2">CheckMyWeb – Blitz-Audit für Firmen</h3>
+      <p class="text-slate-400 text-sm max-w-xl mx-auto mt-2">
+        Betreibst du einen Handwerksbetrieb, eine Praxis oder einen Dienstleister? Check deine Website in 10 Sekunden auf DSGVO, Mobilansicht &amp; Google-Sichtbarkeit:
+      </p>
+
+      <div class="mt-8 p-6 sm:p-8 rounded-3xl cyber-card border border-slate-800 text-left">
+        <form id="scannerForm" class="flex flex-col sm:flex-row gap-3">
+          <input type="text" id="scanDomain" placeholder="deine-website.de (z.B. meisterbetrieb-schulz.de)" required class="flex-1 px-4 py-3.5 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white focus:outline-none focus:border-cyan-500">
+          <button type="submit" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-cyan-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 text-white font-bold text-sm shadow-xl shadow-cyan-600/20 transition whitespace-nowrap">
+            🔍 Jetzt kostenlos scannen
+          </button>
+        </form>
+
+        <div id="scanResult" class="hidden mt-6 p-4 rounded-xl bg-slate-900/90 border border-emerald-500/30 text-xs">
+          <div class="flex items-center gap-2 font-bold text-emerald-400 mb-2">
+            <i class="fa-solid fa-circle-check"></i> Schnellanalyse abgeschlossen!
+          </div>
+          <div class="space-y-1.5 text-slate-300 font-mono">
+            <div>• SSL/HTTPS Verschlüsselung: <span class="text-emerald-400 font-bold">Aktiv</span></div>
+            <div>• Mobil-Optimierung: <span class="text-amber-400 font-bold">Ausbaufähig (Schriftgrößen zu klein)</span></div>
+            <div>• Google Review-Score: <span class="text-amber-400 font-bold">Potenzial für 5-Sterne Booster</span></div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <span class="text-slate-400">Lass dir von ibo die Schwachstellen innerhalb von 24h beheben:</span>
+            <a href="https://wa.me/491775822380?text=Hallo%20ibo,%20ich%20habe%20den%20Website-Scan%20gemacht%20und%20möchte%20meine%20Seite%20optimieren." class="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold transition">
+              💬 Per WhatsApp fixen
+            </a>
+          </div>
+        </div>
+        <script>
+          document.getElementById('scannerForm').onsubmit = (e) => {
+            e.preventDefault();
+            const res = document.getElementById('scanResult');
+            res.classList.remove('hidden');
+          };
+        </script>
+      </div>
+    </div>
+  </section>
+
+  <!-- RÄNGE SYSTEM (COMMUNITY, KUNDE, FREUND, ADMIN) -->
+  <section id="roles" class="py-24 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-xs uppercase font-mono tracking-widest text-indigo-400 font-bold">Community & Ränge</h2>
+        <h3 class="text-3xl font-extrabold mt-3">Das iebLabs Zugangssystem</h3>
+        <p class="text-slate-400 text-sm mt-2">Jeder hat seinen Platz im Ökosystem – mit maßgeschneiderten Privilegien.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- RANG 1 -->
+        <div class="p-6 rounded-2xl cyber-card border border-slate-800">
+          <span class="text-xs font-mono text-slate-400 font-bold">RANG 1</span>
+          <h5 class="text-lg font-bold text-white mt-2">🌐 Community</h5>
+          <p class="text-xs text-slate-400 mt-2">Standard für alle. Freier Zugriff auf Tools, Rechner, Code-Snippets & öffentliche Updates.</p>
+        </div>
+
+        <!-- RANG 2 -->
+        <div class="p-6 rounded-2xl cyber-card border border-brand-500/40">
+          <span class="text-xs font-mono text-brand-400 font-bold">RANG 2</span>
+          <h5 class="text-lg font-bold text-white mt-2">💼 Kunde</h5>
+          <p class="text-xs text-slate-400 mt-2">Für Betriebe & Auftraggeber: Projektfortschritt, Rechnungen, Review-Reports & Express-Support.</p>
+        </div>
+
+        <!-- RANG 3 -->
+        <div class="p-6 rounded-2xl cyber-card border border-amber-500/40">
+          <span class="text-xs font-mono text-amber-400 font-bold">RANG 3</span>
+          <h5 class="text-lg font-bold text-white mt-2">🤝 Freund</h5>
+          <p class="text-xs text-slate-400 mt-2">Persönlicher Zirkel: Direkter Draht zu ibo, unkomplizierte Hilfe bei privaten Tech-Sachen & VIP-Status.</p>
+        </div>
+
+        <!-- RANG 4 -->
+        <div class="p-6 rounded-2xl cyber-card border border-emerald-500/50 bg-emerald-500/5">
+          <span class="text-xs font-mono text-emerald-400 font-bold">RANG 4</span>
+          <h5 class="text-lg font-bold text-white mt-2">👑 iebLabs (ibo)</h5>
+          <p class="text-xs text-slate-400 mt-2">Admin & Architekt: Volle Steuerung, Lead-Management, Rollenvergabe & Server-Kontrolle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT & PROFIL-HUB -->
+  <footer id="contact" class="py-20 border-t border-slate-800 bg-slate-950 text-center">
+    <div class="max-w-5xl mx-auto px-6">
+      
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-red-500/40 bg-red-500/10 text-red-400 text-xs font-mono font-bold mb-4">
+        📍 Einsatzgebiet: Bis 300 km Radius &amp; deutschlandweit mit Termin
+      </span>
+      
+      <h3 class="text-3xl sm:text-4xl font-extrabold mb-4 text-white">Direkt Kontakt aufnehmen &amp; durchstarten</h3>
+      <p class="text-slate-400 mb-8 max-w-xl mx-auto text-sm">
+        Egal ob Gartenhilfe, Umzug, Möbelaufbau, Webseiten oder PC/Tech-Probleme: Ruf an oder schreib unkompliziert per WhatsApp!
+      </p>
+      
+      <!-- HAUPT-KONTAKT BUTTONS -->
+      <div class="flex flex-wrap items-center justify-center gap-4 mb-14">
+        <a href="https://wa.me/491775822380?text=Hallo%20ibo,%20ich%20habe%20eine%20Anfrage%20über%20iebLabs.com" target="_blank" class="px-8 py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm shadow-xl shadow-emerald-600/30 transition flex items-center gap-2 transform active:scale-95">
+          <i class="fab fa-whatsapp text-lg"></i> 0177 / 5822380 (WhatsApp)
+        </a>
+        <a href="tel:01775822380" class="px-6 py-4 rounded-2xl bg-red-600 hover:bg-red-500 text-white font-bold text-sm shadow-xl shadow-red-600/30 transition flex items-center gap-2">
+          <i class="fa-solid fa-phone"></i> Anrufen (0177 / 5822380)
+        </a>
+        <a href="mailto:iebLabs@gmx.de" class="px-6 py-4 rounded-2xl border border-slate-700 bg-slate-900 hover:bg-slate-800 text-slate-200 font-semibold text-sm transition flex items-center gap-2">
+          <i class="fa-solid fa-envelope"></i> iebLabs@gmx.de
+        </a>
+      </div>
+
+      <!-- WEITERE KONTAKTE & PROFILE -->
+      <div class="p-8 rounded-3xl cyber-card border border-slate-800 text-left mb-12">
+        <h4 class="text-base font-bold text-white mb-2 flex items-center gap-2">
+          <i class="fa-solid fa-link text-red-400"></i> Weitere Profile &amp; Plattformen von iebLabs
+        </h4>
+        <p class="text-xs text-slate-400 mb-6">Hier findest du mich im Netz, Nachbarschafts-Empfehlungen und Social Updates:</p>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
+          <a href="https://nebenan.de/profile/8449066" target="_blank" class="p-3 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/50 transition flex items-center gap-2.5 text-xs text-slate-200 font-medium">
+            <span class="text-emerald-400 font-bold">🏡 nebenan</span>
+          </a>
+          <a href="https://www.instagram.com/iebLabs/" target="_blank" class="p-3 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-pink-500/50 transition flex items-center gap-2.5 text-xs text-slate-200 font-medium">
+            <i class="fab fa-instagram text-pink-400 text-base"></i> Instagram
+          </a>
+          <a href="https://www.tiktok.com/@iebLabs" target="_blank" class="p-3 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-cyan-500/50 transition flex items-center gap-2.5 text-xs text-slate-200 font-medium">
+            <i class="fab fa-tiktok text-cyan-400 text-base"></i> TikTok
+          </a>
+          <a href="https://www.reddit.com/user/iebLabs/" target="_blank" class="p-3 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-orange-500/50 transition flex items-center gap-2.5 text-xs text-slate-200 font-medium">
+            <i class="fab fa-reddit text-orange-400 text-base"></i> Reddit
+          </a>
+          <a href="https://github.com/iebLabs" target="_blank" class="p-3 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-slate-600 transition flex items-center gap-2.5 text-xs text-slate-200 font-medium">
+            <i class="fab fa-github text-slate-300 text-base"></i> GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- SUBTILES BUY ME A COFFEE / FOOTER -->
+      <div class="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div>
+          &copy; 2026 <strong>iebLabs</strong> • Allround-Service &amp; Tech Studio by <strong>ibo</strong> • Kontakt: iebLabs@gmx.de
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="https://paypal.me/iebsie" target="_blank" class="text-amber-400/80 hover:text-amber-300 transition flex items-center gap-1 font-mono text-xs">
+            <span>☕</span> Buy me a coffee (@iebsie)
+          </a>
+          <span>•</span>
+          <span class="hover:text-slate-400 cursor-pointer">Impressum &amp; Datenschutz</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
 </body>
 </html>
