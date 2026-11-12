@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iebLabs // Mein Profil & 1:1 Anfrage-Desk</title>
+  <link rel="icon" type="image/png" href="avatar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    .glow-bg {
+      background: radial-gradient(circle at 50% 0%, rgba(239, 68, 68, 0.15) 0%, rgba(99, 102, 241, 0.08) 50%, transparent 80%);
+    }
+    .cyber-card {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased">
+
+  <!-- NAVBAR -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-slate-950/85 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="avatar.png" alt="iebLabs Logo" class="w-10 h-10 rounded-xl object-cover border border-red-500/40 shadow-lg shadow-red-500/20">
+        <div>
+          <span class="text-xl font-extrabold tracking-tight text-white">iebLabs</span>
+          <span class="text-[10px] text-red-400 font-mono block -mt-1 font-bold tracking-wider">BENUTZER-HUB &amp; PROFILE</span>
+        </div>
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="tools.html" class="text-xs font-semibold text-slate-300 hover:text-white transition">Tools &amp; Rechner</a>
+        <a href="index.html" class="text-xs font-semibold text-slate-300 hover:text-white transition">&larr; Hauptseite</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROFILE HEADER / COVER -->
+  <main class="pt-24 pb-20 max-w-5xl mx-auto px-6">
+    
+    <!-- BANNER & AVATAR -->
+    <div class="relative rounded-3xl overflow-hidden cyber-card border border-slate-800 p-8 glow-bg mb-10">
+      <div class="flex flex-col sm:flex-row items-center sm:items-start gap-8">
+        
+        <!-- AVATAR CONTAINER WITH UPLOAD BUTTON -->
+        <div class="relative group">
+          <img id="avatarPreview" src="avatar.png" alt="User Avatar" class="w-32 h-32 rounded-2xl object-cover border-2 border-red-500/50 shadow-2xl shadow-red-500/30">
+          <label for="avatarUploadInput" class="absolute inset-0 bg-black/60 rounded-2xl flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 cursor-pointer transition text-xs font-bold text-white">
+            <i class="fa-solid fa-camera mb-1 text-base"></i> Bild ändern
+          </label>
+          <input type="file" id="avatarUploadInput" accept="image/*" class="hidden">
+        </div>
+
+        <!-- USER DETAILS -->
+        <div class="flex-1 text-center sm:text-left">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <h1 id="displayName" class="text-2xl sm:text-3xl font-extrabold text-white">ibo</h1>
+              <p id="usernameTag" class="text-xs font-mono text-slate-400 mt-0.5">@ibo_ieblabs</p>
+            </div>
+            <span id="roleBadge" class="self-center sm:self-auto px-3.5 py-1.5 rounded-full bg-red-500/20 text-red-400 border border-red-500/40 text-xs font-mono font-bold">
+              👑 RANG 4: ADMIN &amp; ARCHITEKT
+            </span>
+          </div>
+
+          <p id="bioText" class="text-sm text-slate-300 mt-4 leading-relaxed max-w-2xl">
+            Gründer von iebLabs. Allround-Macher für Haus, Hof, Garten, Umzug &amp; High-End Tech (Web, Android, Tuning).
+          </p>
+
+          <div class="mt-6 flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs text-slate-400 font-mono">
+            <span><i class="fa-solid fa-location-dot text-red-400"></i> <span id="locationText">Einsatzradius: 300 km</span></span>
+            <span><i class="fa-solid fa-calendar text-brand-400"></i> Mitglied seit Nov. 2026</span>
+            <span><i class="fa-solid fa-shield-halved text-emerald-400"></i> Account verifiziert</span>
+          </div>
+        </div>
+
+        <!-- EDIT PROFILE BUTTON -->
+        <button id="btnEditToggle" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-white border border-slate-700 transition">
+          <i class="fa-solid fa-pen-to-square"></i> Profil bearbeiten
+        </button>
+
+      </div>
+
+      <!-- EDIT PROFILE FORM (HIDDEN BY DEFAULT) -->
+      <div id="editProfileSection" class="hidden mt-8 pt-8 border-t border-slate-800">
+        <h3 class="text-base font-bold text-white mb-4">Profilangaben anpassen</h3>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="text-xs font-mono text-slate-400 block mb-1">Anzeigename</label>
+            <input type="text" id="inputName" value="ibo" class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white focus:outline-none focus:border-red-500">
+          </div>
+          <div>
+            <label class="text-xs font-mono text-slate-400 block mb-1">Benutzername</label>
+            <input type="text" id="inputUser" value="@ibo_ieblabs" class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white focus:outline-none focus:border-red-500">
+          </div>
+          <div class="sm:col-span-2">
+            <label class="text-xs font-mono text-slate-400 block mb-1">Bio / Über mich</label>
+            <textarea id="inputBio" rows="3" class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white focus:outline-none focus:border-red-500">Gründer von iebLabs. Allround-Macher für Haus, Hof, Garten, Umzug & High-End Tech.</textarea>
+          </div>
+          <div>
+            <label class="text-xs font-mono text-slate-400 block mb-1">Standort / Radius</label>
+            <input type="text" id="inputLocation" value="Einsatzradius: 300 km" class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white focus:outline-none focus:border-red-500">
+          </div>
+          <div>
+            <label class="text-xs font-mono text-slate-400 block mb-1">Rang</label>
+            <select id="inputRole" class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white focus:outline-none focus:border-red-500">
+              <option value="👑 RANG 4: ADMIN &amp; ARCHITEKT">👑 RANG 4: Admin &amp; Architekt</option>
+              <option value="💼 RANG 2: KUNDE">💼 RANG 2: Kunde / Auftraggeber</option>
+              <option value="🤝 RANG 3: FREUND">🤝 RANG 3: VIP Freund</option>
+              <option value="🌐 RANG 1: COMMUNITY">🌐 RANG 1: Community</option>
+            </select>
+          </div>
+        </div>
+        <div class="mt-4 flex gap-3">
+          <button id="btnSaveProfile" class="px-5 py-2.5 rounded-xl bg-red-600 hover:bg-red-500 text-xs font-bold text-white transition">
+            Änderungen speichern
+          </button>
+          <button id="btnCancelEdit" class="px-4 py-2.5 rounded-xl bg-slate-800 text-xs text-slate-400 hover:text-white transition">
+            Abbrechen
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1:1 PRIVATE ANFRAGEN DESK -->
+    <div class="grid lg:grid-cols-3 gap-8">
+      
+      <!-- FORM: NEUE ANFRAGE SENDEN -->
+      <div class="lg:col-span-2 p-8 rounded-3xl cyber-card border border-slate-800">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-red-500/20 text-red-400 flex items-center justify-center font-bold">
+            <i class="fa-solid fa-paper-plane"></i>
+          </div>
+          <div>
+            <h2 class="text-lg font-bold text-white">1:1 Private Anfrage an ibo senden</h2>
+            <p class="text-xs text-slate-400">Direkter, verschlüsselter Draht für Garten-, Umzugs- oder Tech-Aufträge.</p>
+          </div>
+        </div>
+
+        <form id="inquiryForm" class="space-y-4">
+          <div>
+            <label class="text-xs font-mono text-slate-400 block mb-1">Bereich / Kategorie</label>
+            <select id="inquiryCategory" class="w-full px-3 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white focus:outline-none focus:border-red-500">
+              <option>🌿 Gartenhilfe &amp; Grünschnitt</option>
+              <option>📦 Umzugshelfer, Transport &amp; Möbelaufbau</option>
+              <option>🛠️ Alltagshelfer / Kleinreparaturen</option>
+              <option>💻 Websites, Google-Booster &amp; B2B</option>
+              <option>📱 Android Modding &amp; E-Scooter Tuning</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="text-xs font-mono text-slate-400 block mb-1">Worum geht es genau?</label>
+            <textarea id="inquiryMessage" rows="4" placeholder="Beschreibe kurz dein Anliegen (z.B. Garten ca. 200 qm Rasen mähen, oder 3 Schränke aufbauen)..." required class="w-full px-3 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white focus:outline-none focus:border-red-500"></textarea>
+          </div>
+
+          <div>
+            <label class="text-xs font-mono text-slate-400 block mb-1">Deine Rückrufnummer oder WhatsApp</label>
+            <input type="text" id="inquiryContact" placeholder="017... oder Name" required class="w-full px-3 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white focus:outline-none focus:border-red-500">
+          </div>
+
+          <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-red-600 to-indigo-600 hover:from-red-500 hover:to-indigo-500 text-white font-bold text-sm shadow-xl shadow-red-600/20 transition flex items-center justify-center gap-2">
+            <span>🚀 Anfrage absenden</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- STATUS TRACKER -->
+      <div class="p-8 rounded-3xl cyber-card border border-slate-800 flex flex-col justify-between">
+        <div>
+          <h3 class="text-base font-bold text-white mb-2 flex items-center gap-2">
+            <i class="fa-solid fa-list-check text-red-400"></i> Aktive Anfragen
+          </h3>
+          <p class="text-xs text-slate-400 mb-6">Live-Status deiner Aufträge bei iebLabs:</p>
+
+          <div id="inquiryList" class="space-y-3">
+            <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800">
+              <div class="flex items-center justify-between text-xs mb-1">
+                <span class="font-bold text-white">Gartenpflege &amp; Grünschnitt</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">In Bearbeitung</span>
+              </div>
+              <p class="text-[11px] text-slate-400">Rückmeldung &amp; Festpreisangebot innerhalb von 2 Std.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-slate-800 text-xs text-slate-400 text-center">
+          Dringend? Schreib direkt per WhatsApp: <br>
+          <a href="https://wa.me/491775822380" class="text-emerald-400 font-bold hover:underline">0177 / 5822380</a>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script>
+    // LOCAL STORAGE PROFILE PERSISTENCE
+    const defaultData = {
+      name: "ibo",
+      username: "@ibo_ieblabs",
+      bio: "Gründer von iebLabs. Allround-Macher für Haus, Hof, Garten, Umzug & High-End Tech.",
+      location: "Einsatzradius: 300 km",
+      role: "👑 RANG 4: ADMIN & ARCHITEKT",
+      avatar: "avatar.png"
+    };
+
+    function loadProfile() {
+      const saved = JSON.parse(localStorage.getItem('ieb_user_profile') || JSON.stringify(defaultData));
+      document.getElementById('displayName').innerText = saved.name;
+      document.getElementById('usernameTag').innerText = saved.username;
+      document.getElementById('bioText').innerText = saved.bio;
+      document.getElementById('locationText').innerText = saved.location;
+      document.getElementById('roleBadge').innerHTML = saved.role;
+      document.getElementById('avatarPreview').src = saved.avatar;
+    }
+
+    document.getElementById('btnEditToggle').onclick = () => {
+      document.getElementById('editProfileSection').classList.toggle('hidden');
+    };
+
+    document.getElementById('btnCancelEdit').onclick = () => {
+      document.getElementById('editProfileSection').classList.add('hidden');
+    };
+
+    document.getElementById('btnSaveProfile').onclick = () => {
+      const profile = {
+        name: document.getElementById('inputName').value,
+        username: document.getElementById('inputUser').value,
+        bio: document.getElementById('inputBio').value,
+        location: document.getElementById('inputLocation').value,
+        role: document.getElementById('inputRole').value,
+        avatar: document.getElementById('avatarPreview').src
+      };
+      localStorage.setItem('ieb_user_profile', JSON.stringify(profile));
+      loadProfile();
+      document.getElementById('editProfileSection').classList.add('hidden');
+    };
+
+    // AVATAR FILE UPLOAD PREVIEW
+    document.getElementById('avatarUploadInput').onchange = (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          document.getElementById('avatarPreview').src = event.target.result;
+          const current = JSON.parse(localStorage.getItem('ieb_user_profile') || JSON.stringify(defaultData));
+          current.avatar = event.target.result;
+          localStorage.setItem('ieb_user_profile', JSON.stringify(current));
+        };
+        reader.readAsDataURL(file);
+      }
+    };
+
+    // INQUIRY FORM
+    document.getElementById('inquiryForm').onsubmit = (e) => {
+      e.preventDefault();
+      const cat = document.getElementById('inquiryCategory').value;
+      const msg = document.getElementById('inquiryMessage').value;
+      
+      const newCard = document.createElement('div');
+      newCard.className = 'p-3.5 rounded-xl bg-slate-900/90 border border-red-500/40 animate-pulse';
+      newCard.innerHTML = `
+        <div class="flex items-center justify-between text-xs mb-1">
+          <span class="font-bold text-white">${cat}</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">Gesendet</span>
+        </div>
+        <p class="text-[11px] text-slate-300">${msg.substring(0, 50)}...</p>
+      `;
+      document.getElementById('inquiryList').prepend(newCard);
+      document.getElementById('inquiryForm').reset();
+      alert('Anfrage erfolgreich übermittelt! ibo meldet sich schnellstmöglich bei dir.');
+    };
+
+    loadProfile();
+  </script>
+
+</body>
+</html>
