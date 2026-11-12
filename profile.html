@@ -294,9 +294,11 @@
     };
 
     function checkAuth() {
-      const authState = localStorage.getItem('ieb_auth_state');
+      let authState = localStorage.getItem('ieb_auth_state');
       if (!authState) {
-        document.getElementById('authGatewayModal').classList.remove('hidden');
+        authState = 'guest';
+        localStorage.setItem('ieb_auth_state', 'guest');
+        applyGuestMode();
       } else if (authState === 'guest') {
         applyGuestMode();
       } else {
@@ -337,7 +339,12 @@
       document.getElementById('usernameTag').innerText = saved.username;
       document.getElementById('bioText').innerText = saved.bio;
       document.getElementById('locationText').innerText = saved.location;
-      document.getElementById('roleBadge').innerHTML = saved.role;
+      
+      let roleHtml = saved.role;
+      if (saved.pendingRole) {
+        roleHtml += ` <span class="text-[10px] text-amber-400 font-mono bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/30 ml-2">⏳ Prüfung läuft: ${saved.pendingRole}</span>`;
+      }
+      document.getElementById('roleBadge').innerHTML = roleHtml;
       document.getElementById('avatarPreview').src = saved.avatar;
 
       document.getElementById('navAuthStatePill').innerText = '✅ ' + (saved.name || 'MITGLIED');
@@ -397,12 +404,27 @@
 
     document.getElementById('btnSaveProfile').onclick = () => {
       const current = JSON.parse(localStorage.getItem('ieb_user_profile') || JSON.stringify(defaultAdminProfile));
+      const requestedRole = document.getElementById('inputRole').value;
+      const isAdmin = (current.name && current.name.toLowerCase() === 'ibo') || (current.username && current.username.toLowerCase().includes('ibo'));
+
       current.name = document.getElementById('inputName').value;
       current.username = document.getElementById('inputUser').value;
       current.bio = document.getElementById('inputBio').value;
       current.location = document.getElementById('inputLocation').value;
-      current.role = document.getElementById('inputRole').value;
       current.avatar = document.getElementById('avatarPreview').src;
+
+      if (isAdmin) {
+        current.role = requestedRole;
+        delete current.pendingRole;
+      } else {
+        if (requestedRole !== current.role && requestedRole !== '🌐 MITGLIED') {
+          current.pendingRole = requestedRole;
+          alert('⏳ Rollen-Anfrage eingereicht!\n\nDeine Anfrage für den Status "' + requestedRole + '" ist nun in Prüfung und wird von ibo im Admin-Panel freigeschaltet.');
+        } else {
+          current.role = requestedRole;
+          delete current.pendingRole;
+        }
+      }
 
       localStorage.setItem('ieb_user_profile', JSON.stringify(current));
       applyRegisteredMode();

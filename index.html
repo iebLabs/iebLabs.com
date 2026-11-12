@@ -60,45 +60,40 @@
     <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-mono text-[11px] font-bold">
       <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> 🚨 24/7 NOTDIENST AKTIV
     </span>
-    <span>Willkommen in meinem Labor – Alles rund um Code, Web, Hardware &amp; Tuning by <strong>ibo</strong>.</span>
+    <span>Willkommen in meinem Labor – Alles rund um Code, Scripte, Web, Hardware, Alltag &amp; Tuning by <strong>ibo persönlich</strong>.</span>
     <a href="https://wa.me/491775822380?text=NOTFALL:%20Hallo%20ibo,%20ich%20brauche%20dringend%20Hilfe!" target="_blank" class="text-emerald-400 font-bold hover:underline flex items-center gap-1">
-      <i class="fab fa-whatsapp"></i> 0177 / 5822380 (WhatsApp Sofort-Chat)
+      <i class="fab fa-whatsapp"></i> WhatsApp Sofort-Chat
     </a>
   </div>
 
   <!-- NAVBAR -->
   <header class="fixed top-8 inset-x-0 z-50 bg-slate-950/85 backdrop-blur-md border-b border-slate-800/80">
     <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-3 shrink-0 mr-4">
         <img src="avatar.png" alt="iebLabs Logo" class="w-10 h-10 rounded-xl object-cover border border-red-500/40 shadow-lg shadow-red-500/20" onerror="this.onerror=null; this.src='favicon-circle.png';">
-        <div>
-          <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-white via-slate-100 to-slate-400 bg-clip-text text-transparent">iebLabs</span>
-        </div>
+        <a href="#about-ibo" class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-white via-slate-100 to-slate-400 bg-clip-text text-transparent hover:opacity-90 transition">iebLabs</a>
       </div>
 
-      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
-        <a href="#about-ibo" class="hover:text-white transition">Ibo</a>
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-300">
         <a href="#services" class="hover:text-white transition">Services</a>
         <a href="#webcheck" class="text-cyan-400 hover:text-cyan-300 transition font-medium">Website-Check</a>
-        <a href="#hardware-lab" class="hover:text-white transition">Android & E-Scooter</a>
+        <a href="#hardware-lab" class="hover:text-white transition">Tech-Lab</a>
         <a href="tools.html" class="text-red-400 hover:text-red-300 font-bold transition flex items-center gap-1.5">
-          <i class="fa-solid fa-screwdriver-wrench"></i> Tools &amp; Rechner
+          <i class="fa-solid fa-screwdriver-wrench text-xs"></i> Tools &amp; Rechner
         </a>
         <a href="profile.html" class="hover:text-white transition flex items-center gap-1">
-          <i class="fa-solid fa-user"></i> Profil
+          <i class="fa-solid fa-user text-xs"></i> Profil &amp; Status
         </a>
-        <a href="#roles" class="hover:text-white transition">Status</a>
+        <a href="#roles" class="hover:text-white transition">Rollen</a>
         <a href="#contact" class="hover:text-white transition">Kontakt</a>
       </nav>
 
-      <div class="flex items-center gap-3">
-        <button onclick="openSiteInboxModal()" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 text-xs font-mono font-bold border border-slate-700 transition flex items-center gap-1.5" title="Nachrichten / Postfach">
-          <i class="fa-solid fa-inbox text-red-400"></i> Postfach <span id="navInboxCountBadge" class="px-1.5 py-0.5 rounded-full bg-red-600 text-[10px] text-white font-bold">1</span>
+      <div class="flex items-center gap-3 shrink-0">
+        <button onclick="openSiteInboxModal()" class="relative p-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-800 transition flex items-center justify-center" title="Nachrichten / Postfach">
+          <i class="fa-solid fa-inbox text-base text-red-400"></i>
+          <span id="navInboxCountBadge" class="absolute -top-1 -right-1 px-1.5 py-0.2 rounded-full bg-red-600 text-[10px] text-white font-bold leading-tight shadow-md">1</span>
         </button>
-        <a href="https://wa.me/491775822380?text=NOTDIENST:%20Hallo%20ibo,%20ich%20habe%20einen%20Notfall!" target="_blank" class="px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-lg shadow-emerald-600/30 transition flex items-center gap-1.5" title="24/7 Notdienst WhatsApp">
-          <i class="fab fa-whatsapp text-sm"></i> 24/7 Notdienst
-        </a>
-        <button onclick="openInquiryChooser('Allgemeine Anfrage')" class="px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold shadow-lg shadow-brand-600/30 transition transform active:scale-95">
+        <button onclick="openInquiryChooser('Allgemeine Anfrage')" class="px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold shadow-md shadow-brand-600/30 transition transform active:scale-95 whitespace-nowrap">
           ieb. kontaktieren?
         </button>
       </div>
@@ -170,16 +165,17 @@
               </span>
             </div>
             <p class="text-slate-300 text-base mt-4 leading-relaxed">
-              "Ich mache keine halben Sachen. Egal ob dein Firmenauftritt neue Kunden bringen muss, du ein maßgeschneidertes Script brauchst, ein veraltetes Android-Handy wieder rennen soll, oder dein Garten gerodet werden muss: <strong>Ich kümmere mich darum.</strong> Wer mich im Kontaktbuch hat, hat die direkte Abkürzung für jedes digitale, technische &amp; handwerkliche Problem."
+              Ich mache keine halben Sachen. Egal ob dein Firmenauftritt neue Kunden bringen muss, du ein maßgeschneidertes Script brauchst, ein veraltetes Android-Handy wieder rennen soll, oder du zuverlässige Alltagshilfen, Tragearbeiten &amp; handwerkliche Unterstützung brauchst: <strong>Ich kümmere mich darum.</strong> Wer mich im Kontaktbuch hat, hat die direkte Abkürzung für jedes digitale, technische, praktische &amp; handwerkliche Problem.
             </p>
             <div class="mt-6 flex flex-wrap gap-2 text-xs font-mono">
               <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg border border-slate-700">💻 Codes, Scripte &amp; Automation</span>
               <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg border border-slate-700">🌐 High-End Websites</span>
               <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg border border-slate-700">📱 Android Unlocking</span>
               <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg border border-slate-700">🛴 E-Scooter Firmware &amp; Tuning</span>
-              <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg border border-slate-700">🛠️ PC-Bau &amp; 24/7 Notdienst</span>
-              <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg border border-slate-700">🌿 Leben, Haus &amp; Garten</span>
-              <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg border border-slate-700">📦 Montage &amp; Transport</span>
+              <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg border border-slate-700">🛠️ PC-Bau &amp; Reparaturen</span>
+              <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg border border-slate-700">🤝 Alltagshilfen &amp; Macher-Support</span>
+              <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg border border-slate-700">🌿 Haus, Garten &amp; Montage</span>
+              <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg border border-slate-700">⚡ Schnelle Problemlösungen</span>
               <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg border border-slate-700">⭐ Google 5-Sterne Booster</span>
             </div>
           </div>
@@ -191,9 +187,9 @@
   <!-- DAS POWER-PORTFOLIO (5 SÄULEN) -->
   <section id="services" class="py-24 border-t border-slate-800">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center max-w-2xl mx-auto mb-16">
+      <div class="text-center max-w-3xl mx-auto mb-16">
         <h2 class="text-xs uppercase font-mono tracking-widest text-brand-400 font-bold">Leistungsumfang &amp; Allround-Service</h2>
-        <h3 class="text-3xl sm:text-4xl font-extrabold mt-3">Fürs Leben, Haus, Garten &amp; das Digitale – ich packe an</h3>
+        <h3 class="text-3xl sm:text-4xl font-extrabold mt-3">Egal welches Problem: Leben, Alltag &amp; Digitales – ich helfe bei allem &amp; packe an</h3>
         <p class="text-slate-400 text-sm mt-3">📍 Vor Ort flexibel im Einsatz &amp; mit Termin deutschlandweit verfügbar</p>
       </div>
 
@@ -203,16 +199,16 @@
         <div class="p-6 rounded-3xl cyber-card border border-rose-500/40 hover:border-rose-400 transition flex flex-col justify-between">
           <div>
             <div class="w-12 h-12 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center text-2xl mb-5">
-              🤝
+              ⚡
             </div>
             <h4 class="text-lg font-bold mb-2">Alltagshelfer</h4>
             <p class="text-slate-400 text-xs leading-relaxed mb-4">
-              Persönliche Entlastung &amp; tatkräftige Unterstützung: Begleitung bei Terminen, Besorgungen, Unterstützung bei Formularen &amp; Post, Botengänge &amp; Notfall-Hilfe.
+              Wenn's brennt, schwer wird oder schnell gehen muss: Schwere Transporte, spontane Hilfe bei Ausfällen &amp; Pannen, handwerkliche Unterstützung &amp; stressige Sonderaufgaben einfach abgeben.
             </p>
             <ul class="text-xs space-y-1.5 text-slate-300 font-mono">
-              <li>✓ Begleitung &amp; Erledigungen</li>
-              <li>✓ Hilfe bei Formularen &amp; Post</li>
-              <li>✓ Persönlicher Notfall-Beistand</li>
+              <li>✓ Schwere Tragehilfe &amp; Transport</li>
+              <li>✓ Soforthilfe bei Pannen &amp; Ausfällen</li>
+              <li>✓ Komplizierte Alltagsprobleme lösen</li>
             </ul>
           </div>
           <button onclick="openInquiryChooser('Alltagshelfer')" class="mt-6 w-full py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs text-center transition flex items-center justify-center gap-1.5">
@@ -328,45 +324,91 @@
     </div>
   </section>
 
-  <!-- INTERAKTIVE VORHER/NACHHER-SHOWCASE -->
+  <!-- INTERAKTIVE 3-STUFEN TRANSFORMATION -->
   <section class="py-20 border-t border-slate-800 bg-slate-950">
     <div class="max-w-5xl mx-auto px-6">
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="text-xs font-mono text-emerald-400 font-bold uppercase tracking-wider">Echte Ergebnisse vor Ort</span>
-        <h3 class="text-3xl font-extrabold text-white mt-2">Vorher &amp; Nachher: Macher am Werk</h3>
-        <p class="text-slate-400 text-xs mt-2">Ziehe den Schieberegler, um die Transformation zu sehen:</p>
+      <div class="text-center max-w-2xl mx-auto mb-8">
+        <span class="text-xs font-mono text-brand-400 font-bold uppercase tracking-wider">3-Stufen Qualitäts-Standard</span>
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-white mt-2">Vom Stillstand zum High-End Ergebnis</h3>
       </div>
 
-      <div class="p-8 rounded-3xl cyber-card border border-slate-800">
+      <div class="p-6 sm:p-8 rounded-3xl cyber-card border border-slate-800">
+        <!-- 3-STAGE SELECTOR BUTTONS -->
+        <div class="flex items-center justify-center gap-2 mb-6">
+          <button onclick="setStage(0)" id="btnStage0" class="px-4 py-2 rounded-xl text-xs font-mono font-bold bg-amber-500/20 text-amber-400 border border-amber-500/40 transition">1. Stillstand &amp; Chaos</button>
+          <button onclick="setStage(50)" id="btnStage1" class="px-4 py-2 rounded-xl text-xs font-mono font-bold bg-slate-800 text-slate-400 border border-slate-700 transition">2. Umbau &amp; Macher-Einsatz</button>
+          <button onclick="setStage(100)" id="btnStage2" class="px-4 py-2 rounded-xl text-xs font-mono font-bold bg-slate-800 text-slate-400 border border-slate-700 transition">3. High-End Perfekt</button>
+        </div>
+
         <div class="relative w-full h-80 sm:h-96 rounded-2xl overflow-hidden select-none border border-slate-700" id="comparisonContainer">
-          <!-- NACHHER BILD (UNTEN) -->
+          
+          <!-- STAGE 3: PERFEKTES ERGEBNIS (BASIS) -->
           <div class="absolute inset-0 bg-gradient-to-br from-emerald-950 via-slate-900 to-slate-950 flex flex-col items-center justify-center text-center p-6">
-            <span class="text-4xl sm:text-6xl mb-3">✨🌿</span>
-            <span class="text-xl sm:text-2xl font-black text-emerald-400">NACHHER: Saubere Arbeit</span>
-            <p class="text-xs text-slate-300 max-w-md mt-2">Rasen penibel gemäht, Hecken messerscharf geschnitten, Grünschnitt restlos entsorgt. Bereit zum Genießen.</p>
+            <span class="text-4xl sm:text-6xl mb-3">✨🚀</span>
+            <span class="text-xl sm:text-2xl font-black text-emerald-400">STUFE 3: Perfektes High-End Ergebnis</span>
+            <p class="text-xs text-slate-300 max-w-md mt-2">Messerscharfe Kanten, saubere Beseitigung, maximale Geschwindigkeit &amp; 100% verlässliche Stabilität.</p>
           </div>
-          <!-- VORHER BILD (OBEN, MIT CLIP-PATH) -->
-          <div class="absolute inset-0 bg-gradient-to-br from-amber-950 via-stone-900 to-slate-950 flex flex-col items-center justify-center text-center p-6 border-r-2 border-red-500" id="beforeLayer" style="width: 50%;">
-            <span class="text-4xl sm:text-6xl mb-3">🌾⚡</span>
-            <span class="text-xl sm:text-2xl font-black text-amber-400">VORHER: Wildwuchs &amp; Chaos</span>
-            <p class="text-xs text-slate-300 max-w-md mt-2">Zugewucherte Beete, 1 Meter hohes Gras, sperriger Grünschnitt und kein Durchblick mehr.</p>
+
+          <!-- STAGE 2: UMBAU & EINSATZ (MITTE) -->
+          <div class="absolute inset-0 bg-gradient-to-br from-indigo-950 via-slate-900 to-slate-950 flex flex-col items-center justify-center text-center p-6 border-r-2 border-indigo-400" id="stage2Layer" style="width: 66%;">
+            <span class="text-4xl sm:text-6xl mb-3">⚙️🛠️</span>
+            <span class="text-xl sm:text-2xl font-black text-indigo-400">STUFE 2: Präziser Umbau &amp; Arbeit</span>
+            <p class="text-xs text-slate-300 max-w-md mt-2">Controller geflasht, Scripte geschrieben, Grünschnitt gesägt, Hardware modular optimiert.</p>
           </div>
+
+          <!-- STAGE 1: STILLSTAND & CHAOS (OBEN) -->
+          <div class="absolute inset-0 bg-gradient-to-br from-amber-950 via-stone-900 to-slate-950 flex flex-col items-center justify-center text-center p-6 border-r-2 border-red-500" id="stage1Layer" style="width: 33%;">
+            <span class="text-4xl sm:text-6xl mb-3">💥⚡</span>
+            <span class="text-xl sm:text-2xl font-black text-amber-400">STUFE 1: Stillstand &amp; Probleme</span>
+            <p class="text-xs text-slate-300 max-w-md mt-2">Langsamer Code, zähe Handys, wucherndes Chaos oder blockierte Controller.</p>
+          </div>
+
           <!-- SCHIEBEREGLER INPUT -->
-          <input type="range" min="0" max="100" value="50" id="sliderRange" class="absolute inset-0 opacity-0 cursor-ew-resize w-full h-full z-20">
+          <input type="range" min="0" max="100" value="33" id="sliderRange" class="absolute inset-0 opacity-0 cursor-ew-resize w-full h-full z-30">
+          
           <!-- VISUELLE TRENNLINIE -->
-          <div id="sliderHandle" class="absolute top-0 bottom-0 w-1 bg-red-500 pointer-events-none z-10 flex items-center justify-center" style="left: 50%;">
-            <span class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg text-xs font-bold font-mono">↔</span>
+          <div id="sliderHandle" class="absolute top-0 bottom-0 w-1 bg-white pointer-events-none z-20 flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.8)]" style="left: 33%;">
+            <span class="w-8 h-8 rounded-full bg-slate-900 border-2 border-white text-white flex items-center justify-center shadow-2xl text-xs font-bold font-mono">↔</span>
           </div>
         </div>
+
         <script>
           const slider = document.getElementById('sliderRange');
-          const before = document.getElementById('beforeLayer');
+          const l1 = document.getElementById('stage1Layer');
+          const l2 = document.getElementById('stage2Layer');
           const handle = document.getElementById('sliderHandle');
-          slider.oninput = (e) => {
-            const val = e.target.value;
-            before.style.width = val + '%';
+          
+          function updateLayers(val) {
             handle.style.left = val + '%';
-          };
+            if (val <= 50) {
+              l1.style.width = val + '%';
+              l2.style.width = '100%';
+            } else {
+              l1.style.width = '0%';
+              l2.style.width = (100 - (val - 50) * 2) + '%';
+            }
+            
+            // Buttons highlight
+            const b0 = document.getElementById('btnStage0');
+            const b1 = document.getElementById('btnStage1');
+            const b2 = document.getElementById('btnStage2');
+            [b0, b1, b2].forEach(b => {
+              b.className = 'px-4 py-2 rounded-xl text-xs font-mono font-bold bg-slate-800 text-slate-400 border border-slate-700 transition';
+            });
+            if (val < 40) {
+              b0.className = 'px-4 py-2 rounded-xl text-xs font-mono font-bold bg-amber-500/20 text-amber-400 border border-amber-500/40 transition';
+            } else if (val < 75) {
+              b1.className = 'px-4 py-2 rounded-xl text-xs font-mono font-bold bg-indigo-500/20 text-indigo-400 border border-indigo-500/40 transition';
+            } else {
+              b2.className = 'px-4 py-2 rounded-xl text-xs font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 transition';
+            }
+          }
+          
+          slider.oninput = (e) => updateLayers(e.target.value);
+          function setStage(val) {
+            slider.value = val;
+            updateLayers(val);
+          }
         </script>
       </div>
     </div>
@@ -387,15 +429,9 @@
             <label class="block text-xs font-mono text-slate-300 font-bold mb-1.5">Deine Website-URL:</label>
             <input type="text" id="auditUrl" placeholder="https://deine-website.de (z.B. meisterbetrieb-schulz.de)" required class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white focus:outline-none focus:border-cyan-500">
           </div>
-          <div class="grid sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-xs font-mono text-slate-300 font-bold mb-1.5">Deine Telefon- / WhatsApp-Nummer:</label>
-              <input type="text" id="auditPhone" placeholder="0171 / 1234567" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white focus:outline-none focus:border-cyan-500">
-            </div>
-            <div>
-              <label class="block text-xs font-mono text-slate-300 font-bold mb-1.5">Deine E-Mail-Adresse:</label>
-              <input type="email" id="auditEmail" placeholder="kontakt@deine-firma.de" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white focus:outline-none focus:border-cyan-500">
-            </div>
+          <div>
+            <label class="block text-xs font-mono text-slate-300 font-bold mb-1.5">Deine E-Mail-Adresse für die Rückmeldung:</label>
+            <input type="email" id="auditEmail" placeholder="kontakt@deine-firma.de" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white focus:outline-none focus:border-cyan-500">
           </div>
           <div>
             <label class="block text-xs font-mono text-slate-300 font-bold mb-1.5">Was stört dich an deiner aktuellen Seite? (Optional):</label>
@@ -414,7 +450,6 @@
         <script>
           const sendAudit = (method) => {
             const url = document.getElementById('auditUrl').value.trim();
-            const phone = document.getElementById('auditPhone').value.trim();
             const email = document.getElementById('auditEmail').value.trim();
             const note = document.getElementById('auditNote').value.trim();
 
@@ -423,11 +458,20 @@
               return;
             }
 
-            const text = `Hallo ibo, bitte schau dir meine Website persönlich an:%0A- URL: ${encodeURIComponent(url)}%0A- Kontakt: ${encodeURIComponent(phone || email || 'Nicht angegeben')}%0A- Notiz: ${encodeURIComponent(note || 'Keine')}`;
+            const text = `Hallo ibo, bitte schau dir meine Website persönlich an:%0A- URL: ${encodeURIComponent(url)}%0A- Kontakt: ${encodeURIComponent(email || 'Per WhatsApp')}%0A- Notiz: ${encodeURIComponent(note || 'Keine')}`;
 
             if (method === 'wa') {
               window.open(`https://wa.me/491775822380?text=${text}`, '_blank');
             } else {
+              window.location.href = `mailto:iebLabs@gmx.de?subject=Website-Check%20Anfrage&body=${text}`;
+            }
+          };
+          document.getElementById('btnSendAuditWA').onclick = () => sendAudit('wa');
+          document.getElementById('btnSendAuditMail').onclick = () => sendAudit('mail');
+        </script>
+      </div>
+    </div>
+  </section>
               window.open(`mailto:iebLabs@gmx.de?subject=Website-Check%20fuer%20${encodeURIComponent(url)}&body=${text}`, '_blank');
             }
           };
@@ -446,40 +490,62 @@
   <section id="roles" class="py-24 border-t border-slate-800">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <h2 class="text-xs uppercase font-mono tracking-widest text-indigo-400 font-bold">Community & Ränge</h2>
-        <h3 class="text-3xl font-extrabold mt-3">Das iebLabs Zugangssystem</h3>
+        <h2 class="text-xs uppercase font-mono tracking-widest text-indigo-400 font-bold">Community &amp; Rollen</h2>
+        <h3 class="text-3xl font-extrabold mt-3">iebLabs Zugangssystem</h3>
         <p class="text-slate-400 text-sm mt-2">Jeder hat seinen Platz im Ökosystem – mit maßgeschneiderten Privilegien.</p>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- STATUS 1 -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+        <!-- STATUS 1: GAST -->
         <div class="p-6 rounded-2xl cyber-card border border-slate-800">
-          <span class="text-xs font-mono text-slate-400 font-bold">STATUS 1</span>
-          <h5 class="text-lg font-bold text-white mt-2">🌐 Community / Gast</h5>
-          <p class="text-xs text-slate-400 mt-2">Standard für alle. Freier Zugriff auf Tools, Rechner, Code-Snippets &amp; öffentliche Updates.</p>
+          <span class="text-xs font-mono text-slate-500 font-bold">STATUS 1</span>
+          <h5 class="text-lg font-bold text-white mt-2">👁️ Gast</h5>
+          <p class="text-xs text-slate-400 mt-2">Öffentlicher Besucher. Freier Zugriff auf Info-Seiten, Rechner und öffentliche Tools.</p>
         </div>
 
-        <!-- STATUS 2 -->
+        <!-- STATUS 2: COMMUNITY -->
+        <div class="p-6 rounded-2xl cyber-card border border-cyan-500/30">
+          <span class="text-xs font-mono text-cyan-400 font-bold">STATUS 2</span>
+          <h5 class="text-lg font-bold text-white mt-2">🌐 Community</h5>
+          <p class="text-xs text-slate-400 mt-2">Kostenlos registriertes Mitglied: Eigenes Profil, Postfach &amp; Zugang zu neuen Micro-Tools.</p>
+        </div>
+
+        <!-- STATUS 3: KUNDE -->
         <div class="p-6 rounded-2xl cyber-card border border-brand-500/40">
-          <span class="text-xs font-mono text-brand-400 font-bold">STATUS 2</span>
+          <span class="text-xs font-mono text-brand-400 font-bold">STATUS 3</span>
           <h5 class="text-lg font-bold text-white mt-2">💼 Kunde</h5>
           <p class="text-xs text-slate-400 mt-2">Für Betriebe &amp; Auftraggeber: Direkte Auftragsabwicklung, Projektfortschritt &amp; Express-Support.</p>
         </div>
 
-        <!-- STATUS 3 -->
+        <!-- STATUS 4: FREUND (VIP) -->
         <div class="p-6 rounded-2xl cyber-card border border-amber-500/40">
-          <span class="text-xs font-mono text-amber-400 font-bold">STATUS 3</span>
+          <span class="text-xs font-mono text-amber-400 font-bold">STATUS 4</span>
           <h5 class="text-lg font-bold text-white mt-2">🤝 Freund (VIP)</h5>
           <p class="text-xs text-slate-400 mt-2">Persönlicher Zirkel: Direkter Draht zu ibo, unkomplizierte Hilfe bei privaten Projekten &amp; Tech-Sachen.</p>
         </div>
-
-        <!-- STATUS 4 -->
-        <div class="p-6 rounded-2xl cyber-card border border-emerald-500/50 bg-emerald-500/5">
-          <span class="text-xs font-mono text-emerald-400 font-bold">STATUS 4</span>
-          <h5 class="text-lg font-bold text-white mt-2">👑 ieb. (Admin)</h5>
-          <p class="text-xs text-slate-400 mt-2">Der einzige Rang für ibo: Master Architect, System-Zentrale, Rollenvergabe &amp; Labor-Leitung.</p>
-        </div>
       </div>
+
+      <!-- SEPARATER HIGHLIGHT-RANG: ADMIN (OHNE NUMMER) -->
+      <div class="p-6 sm:p-8 rounded-3xl cyber-card border border-emerald-500/50 bg-gradient-to-r from-emerald-950/20 via-slate-900 to-indigo-950/20 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-4">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-3xl border border-emerald-500/40 shrink-0">
+            👑
+          </div>
+          <div>
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-mono text-[11px] font-bold">LABOR-LEITUNG</span>
+              <h4 class="text-xl font-black text-white">ieb. (Admin &amp; Core)</h4>
+            </div>
+            <p class="text-xs text-slate-300 mt-1 max-w-2xl">
+              Der exklusive Rang ausschließlich für ibo persönlich: Master Architect, Labor-Leitung, System-Zentrale &amp; manuelle Rollenvergabe für alle registrierten Mitglieder.
+            </p>
+          </div>
+        </div>
+        <a href="profile.html" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono font-bold border border-slate-700 transition whitespace-nowrap">
+          Zum Profil &rarr;
+        </a>
+      </div>
+
     </div>
   </section>
 
@@ -493,43 +559,40 @@
       
       <h3 class="text-3xl sm:text-4xl font-extrabold mb-4 text-white">Direkt Kontakt aufnehmen &amp; durchstarten</h3>
       <p class="text-slate-400 mb-8 max-w-xl mx-auto text-sm">
-        Egal ob Gartenhilfe, Umzug, Möbelaufbau, Webseiten oder PC/Tech-Probleme: Ruf an oder schreib unkompliziert per WhatsApp!
+        Egal ob Alltagshilfen, Tragejobs, Möbelaufbau, Webseiten oder PC/Tech-Probleme: Schreib unkompliziert per WhatsApp oder Mail!
       </p>
       
       <!-- HAUPT-KONTAKT BUTTONS -->
       <div class="flex flex-wrap items-center justify-center gap-4 mb-14">
         <a href="https://wa.me/491775822380?text=Hallo%20ibo,%20ich%20habe%20eine%20Anfrage%20über%20iebLabs.com" target="_blank" class="px-8 py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm shadow-xl shadow-emerald-600/30 transition flex items-center gap-2 transform active:scale-95">
-          <i class="fab fa-whatsapp text-lg"></i> 0177 / 5822380 (WhatsApp)
+          <i class="fab fa-whatsapp text-lg"></i> WhatsApp Sofort-Chat
         </a>
         <a href="tel:01775822380" class="px-6 py-4 rounded-2xl bg-red-600 hover:bg-red-500 text-white font-bold text-sm shadow-xl shadow-red-600/30 transition flex items-center gap-2">
-          <i class="fa-solid fa-phone"></i> Anrufen (0177 / 5822380)
+          <i class="fa-solid fa-phone"></i> Direktanruf starten
         </a>
         <a href="mailto:iebLabs@gmx.de" class="px-6 py-4 rounded-2xl border border-slate-700 bg-slate-900 hover:bg-slate-800 text-slate-200 font-semibold text-sm transition flex items-center gap-2">
           <i class="fa-solid fa-envelope"></i> iebLabs@gmx.de
         </a>
       </div>
 
-      <!-- WEITERE KONTAKTE & PROFILE -->
+      <!-- WEITERE KONTAKTE & PROFILE (OHNE GUTEFRAGE) -->
       <div class="p-8 rounded-3xl cyber-card border border-slate-800 text-left mb-12">
         <h4 class="text-base font-bold text-white mb-2 flex items-center gap-2">
-          <i class="fa-solid fa-link text-red-400"></i> Offizielle Profile &amp; Community-Hubs
+          <i class="fa-solid fa-link text-red-400"></i> Offizielle Profile &amp; Kanäle
         </h4>
-        <p class="text-xs text-slate-400 mb-6">Hier findest du mich im Netz, für Ratgeber-Fragen und Social Updates:</p>
+        <p class="text-xs text-slate-400 mb-6">Hier findest du iebLabs &amp; ibo für Neuigkeiten, Releases und Social Updates:</p>
         
-        <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
-          <a href="https://www.gutefrage.net/nutzer/iebLabs" target="_blank" class="p-3 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 transition flex items-center gap-2.5 text-xs text-slate-200 font-medium">
-            <span class="text-blue-400 font-bold">❓ Gutefrage</span>
-          </a>
-          <a href="https://www.instagram.com/iebLabs/" target="_blank" class="p-3 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-pink-500/50 transition flex items-center gap-2.5 text-xs text-slate-200 font-medium">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <a href="https://www.instagram.com/iebLabs/" target="_blank" class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-pink-500/50 transition flex items-center justify-center sm:justify-start gap-2.5 text-xs text-slate-200 font-medium">
             <i class="fab fa-instagram text-pink-400 text-base"></i> Instagram
           </a>
-          <a href="https://www.tiktok.com/@iebLabs" target="_blank" class="p-3 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-cyan-500/50 transition flex items-center gap-2.5 text-xs text-slate-200 font-medium">
+          <a href="https://www.tiktok.com/@iebLabs" target="_blank" class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-cyan-500/50 transition flex items-center justify-center sm:justify-start gap-2.5 text-xs text-slate-200 font-medium">
             <i class="fab fa-tiktok text-cyan-400 text-base"></i> TikTok
           </a>
-          <a href="https://www.reddit.com/user/iebLabs/" target="_blank" class="p-3 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-orange-500/50 transition flex items-center gap-2.5 text-xs text-slate-200 font-medium">
+          <a href="https://www.reddit.com/user/iebLabs/" target="_blank" class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-orange-500/50 transition flex items-center justify-center sm:justify-start gap-2.5 text-xs text-slate-200 font-medium">
             <i class="fab fa-reddit text-orange-400 text-base"></i> Reddit
           </a>
-          <a href="https://github.com/iebLabs" target="_blank" class="p-3 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-slate-600 transition flex items-center gap-2.5 text-xs text-slate-200 font-medium">
+          <a href="https://github.com/iebLabs" target="_blank" class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-slate-600 transition flex items-center justify-center sm:justify-start gap-2.5 text-xs text-slate-200 font-medium">
             <i class="fab fa-github text-slate-300 text-base"></i> GitHub
           </a>
         </div>
@@ -551,16 +614,6 @@
 
     </div>
   </footer>
-
-  <!-- FLOATING 24/7 WHATSAPP NOTDIENST BUTTON -->
-  <a href="https://wa.me/491775822380?text=NOTDIENST:%20Hallo%20ibo,%20ich%20brauche%20dringend%20Hilfe!" target="_blank" class="fixed bottom-6 right-6 z-40 flex items-center gap-3 px-5 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-black text-sm shadow-2xl shadow-emerald-600/60 border border-emerald-400/50 transition transform hover:scale-105 active:scale-95 group" title="24/7 WhatsApp Notdienst">
-    <span class="relative flex h-3 w-3">
-      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
-      <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
-    </span>
-    <i class="fab fa-whatsapp text-2xl group-hover:rotate-12 transition"></i>
-    <span class="hidden sm:inline font-mono tracking-tight">🚨 24/7 NOTDIENST WHATSAPP</span>
-  </a>
 
   <!-- 1. ENTRY GATEWAY MODAL (EINLOGGEN / REGISTRIEREN / GAST) -->
   <div id="siteEntryModal" class="hidden fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4">
@@ -617,7 +670,7 @@
             <div class="text-sm font-bold text-white flex items-center gap-2">
               WhatsApp Direkt-Chat <span class="text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded font-mono font-bold">Schnellste Antwort</span>
             </div>
-            <div class="text-xs text-slate-300 mt-0.5">0177 / 5822380 • Sofort mit ibo schreiben</div>
+            <div class="text-xs text-slate-300 mt-0.5">Sofort per 1-Klick mit ibo chatten</div>
           </div>
         </a>
 
@@ -690,8 +743,13 @@
     function checkSiteEntrySession() {
       const sess = localStorage.getItem('ieb_site_session');
       if (!sess) {
-        document.getElementById('siteEntryModal').classList.remove('hidden');
+        localStorage.setItem('ieb_site_session', 'guest');
       }
+      // Keine Popup-Sperre: Besucher surfen sofort frei als Gast!
+    }
+
+    function openSiteEntryModal() {
+      document.getElementById('siteEntryModal').classList.remove('hidden');
     }
 
     function handleEntryRegister() {
