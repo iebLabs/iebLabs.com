@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iebLabs // Tools & Rechner Suite</title>
+  <meta name="description" content="Kostenlose Online-Tools, Finanzrechner und Brutal Web Utilities by iebLabs & ibo. 100% datenschutzfreundlich, direkt im Browser.">
+  <link rel="icon" type="image/png" href="avatar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: { 400: '#818cf8', 500: '#6366f1', 600: '#4f46e5' },
+            accent: { 400: '#38bdf8', 500: '#0ea5e9' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glow-bg {
+      background: radial-gradient(circle at 50% 0%, rgba(239, 68, 68, 0.12) 0%, rgba(99, 102, 241, 0.08) 40%, transparent 70%);
+    }
+    .cyber-card {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased">
+
+  <!-- NAVBAR -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-slate-950/85 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="avatar.png" alt="iebLabs Logo" class="w-10 h-10 rounded-xl object-cover border border-red-500/40 shadow-lg shadow-red-500/20">
+        <div>
+          <span class="text-xl font-extrabold tracking-tight text-white">iebLabs</span>
+          <span class="text-[10px] text-red-400 font-mono block -mt-1 font-bold tracking-wider">TOOLBOX & RECHNER</span>
+        </div>
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">
+          &larr; Zurück zur Hauptseite
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="pt-32 pb-14 glow-bg border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-red-500/40 bg-red-500/10 text-red-400 text-xs font-mono font-bold mb-4">
+        ⚡ 100% Client-Side • Keine Datenspeicherung • Sofort im Browser
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-white">
+        Die iebLabs Werkzeug- & Rechner-Suite
+      </h1>
+      <p class="text-slate-400 text-base max-w-2xl mx-auto mt-4">
+        Smarte Finanz- und Alltagsrechner sowie blitzschnelle Entwickler-Utilities.
+      </p>
+
+      <!-- SEARCH BAR -->
+      <div class="max-w-md mx-auto mt-8">
+        <div class="relative">
+          <i class="fa-solid fa-magnifying-glass absolute left-4 top-3.5 text-slate-400"></i>
+          <input type="text" id="toolSearch" placeholder="Tool oder Rechner suchen..." class="w-full pl-11 pr-4 py-3 rounded-2xl bg-slate-900 border border-slate-800 text-sm text-white focus:outline-none focus:border-red-500 transition">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT TABS / CATEGORIES -->
+  <main class="max-w-7xl mx-auto px-6 py-16">
+    
+    <!-- KATEGORIE 1: IEBLABS CORE RECHNER -->
+    <div class="mb-20">
+      <div class="flex items-center justify-between mb-8 pb-4 border-b border-slate-800">
+        <div>
+          <span class="text-xs font-mono text-red-400 font-bold uppercase tracking-wider">Kategorie 1</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">
+            💰 iebLabs Core Rechner (Finanzen, Recht & Alltag)
+          </h2>
+          <p class="text-slate-400 text-xs mt-1">Die 12 Flaggschiff-Rechner von ibo für echtes Geldsparen und Alltagshilfe.</p>
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <a href="microtools/mietsenker/index.html" class="p-6 rounded-2xl cyber-card border border-slate-800 hover:border-red-500/50 transition group block">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-2xl">🏠</span>
+            <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">Miete</span>
+          </div>
+          <h3 class="text-lg font-bold text-white group-hover:text-red-400 transition">MietSenker</h3>
+          <p class="text-slate-400 text-xs mt-2">Berechne deine Mietpreisbremse und finde heraus, wie viel zu viel Miete du monatlich zahlst.</p>
+        </a>
+
+        <a href="microtools/handwerkerdeal/index.html" class="p-6 rounded-2xl cyber-card border border-slate-800 hover:border-red-500/50 transition group block">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-2xl">🔨</span>
+            <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/30">Steuern</span>
+          </div>
+          <h3 class="text-lg font-bold text-white group-hover:text-red-400 transition">HandwerkerDeal</h3>
+          <p class="text-slate-400 text-xs mt-2">Handwerkerrechnung bezahlt? Hol dir bis zu 1.200 € direkt vom Finanzamt zurück.</p>
+        </a>
+
+        <a href="microtools/urlaubspuffer/index.html" class="p-6 rounded-2xl cyber-card border border-slate-800 hover:border-red-500/50 transition group block">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-2xl">🏖️</span>
+            <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">Urlaub</span>
+          </div>
+          <h3 class="text-lg font-bold text-white group-hover:text-red-400 transition">UrlaubsPuffer</h3>
+          <p class="text-slate-400 text-xs mt-2">Verdopple deinen Urlaub durch clevere Brückentage 2026 für dein Bundesland.</p>
+        </a>
+
+        <a href="microtools/wattweg/index.html" class="p-6 rounded-2xl cyber-card border border-slate-800 hover:border-red-500/50 transition group block">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-2xl">⚡</span>
+            <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-yellow-500/10 text-yellow-400 border border-yellow-500/30">Energie</span>
+          </div>
+          <h3 class="text-lg font-bold text-white group-hover:text-red-400 transition">WattWeg</h3>
+          <p class="text-slate-400 text-xs mt-2">Finde heimliche Stromfresser im Haushalt und senke deine Stromrechnung drastisch.</p>
+        </a>
+
+        <a href="microtools/abfindungsdeal/index.html" class="p-6 rounded-2xl cyber-card border border-slate-800 hover:border-red-500/50 transition group block">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-2xl">💼</span>
+            <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/30">Job</span>
+          </div>
+          <h3 class="text-lg font-bold text-white group-hover:text-red-400 transition">AbfindungsDeal</h3>
+          <p class="text-slate-400 text-xs mt-2">Berechne deine maximale Kündigungsabfindung nach Fünftelregelung & Betriebszugehörigkeit.</p>
+        </a>
+
+        <a href="microtools/kitarecht/index.html" class="p-6 rounded-2xl cyber-card border border-slate-800 hover:border-red-500/50 transition group block">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-2xl">👶</span>
+            <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-pink-500/10 text-pink-400 border border-pink-500/30">Recht</span>
+          </div>
+          <h3 class="text-lg font-bold text-white group-hover:text-red-400 transition">KitaRecht</h3>
+          <p class="text-slate-400 text-xs mt-2">Keinen Kita-Platz bekommen? Setze deinen Rechtsanspruch & Schadenersatz durch.</p>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- KATEGORIE 2: BRUTAL WEB UTILITIES -->
+    <div>
+      <div class="flex items-center justify-between mb-8 pb-4 border-b border-slate-800">
+        <div>
+          <span class="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Kategorie 2</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">
+            🛠️ Brutal Web Utilities (Dev, Text & Cyber Tools)
+          </h2>
+          <p class="text-slate-400 text-xs mt-1">Brutal einfache Werkzeuge für Entwickler, Creator und alltägliche Datenformatierung.</p>
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <div class="p-6 rounded-2xl cyber-card border border-slate-800">
+          <span class="text-xl">🔤</span>
+          <h4 class="text-base font-bold text-white mt-3">Base64 Converter</h4>
+          <p class="text-slate-400 text-xs mt-1">Texte und Dateien sekundenschnell in Base64 encoden & decoden.</p>
+          <span class="inline-block mt-4 text-[10px] font-mono text-cyan-400">Client-Side Ready</span>
+        </div>
+
+        <div class="p-6 rounded-2xl cyber-card border border-slate-800">
+          <span class="text-xl">📄</span>
+          <h4 class="text-base font-bold text-white mt-3">JSON Formatter</h4>
+          <p class="text-slate-400 text-xs mt-1">Unleserlichen JSON-Code einfügen, validieren, schön formatieren & minifizieren.</p>
+          <span class="inline-block mt-4 text-[10px] font-mono text-cyan-400">Zero-Tracking</span>
+        </div>
+
+        <div class="p-6 rounded-2xl cyber-card border border-slate-800">
+          <span class="text-xl">🔑</span>
+          <h4 class="text-base font-bold text-white mt-3">Hash Generator</h4>
+          <p class="text-slate-400 text-xs mt-1">MD5, SHA-256, SHA-512 Checksummen berechnen ohne Daten ins Netz zu senden.</p>
+          <span class="inline-block mt-4 text-[10px] font-mono text-cyan-400">Local SHA Crypto</span>
+        </div>
+
+        <div class="p-6 rounded-2xl cyber-card border border-slate-800">
+          <span class="text-xl">📱</span>
+          <h4 class="text-base font-bold text-white mt-3">QR-Code Studio</h4>
+          <p class="text-slate-400 text-xs mt-1">URLs, WLAN-Passwörter oder vCards direkt in hochauflösende QR-Codes umwandeln.</p>
+          <span class="inline-block mt-4 text-[10px] font-mono text-cyan-400">Vector SVG Export</span>
+        </div>
+
+        <div class="p-6 rounded-2xl cyber-card border border-slate-800">
+          <span class="text-xl">🔠</span>
+          <h4 class="text-base font-bold text-white mt-3">Case Converter</h4>
+          <p class="text-slate-400 text-xs mt-1">camelCase, snake_case, kebab-case, UPPERCASE mit einem Klick transformieren.</p>
+          <span class="inline-block mt-4 text-[10px] font-mono text-cyan-400">Instant Clean</span>
+        </div>
+
+        <div class="p-6 rounded-2xl cyber-card border border-slate-800">
+          <span class="text-xl">🎨</span>
+          <h4 class="text-base font-bold text-white mt-3">CSS Glass Generator</h4>
+          <p class="text-slate-400 text-xs mt-1">Cyber-Cards, Glassmorphismus & CSS-Backdrop-Filter visuell zusammenbauen.</p>
+          <span class="inline-block mt-4 text-[10px] font-mono text-cyan-400">CSS Copy & Paste</span>
+        </div>
+
+        <div class="p-6 rounded-2xl cyber-card border border-slate-800">
+          <span class="text-xl">🔐</span>
+          <h4 class="text-base font-bold text-white mt-3">Password Forge</h4>
+          <p class="text-slate-400 text-xs mt-1">Kryptografisch sichere Passwörter & Tokens generieren (wie Vault1029384756!).</p>
+          <span class="inline-block mt-4 text-[10px] font-mono text-cyan-400">Entropy Booster</span>
+        </div>
+
+        <div class="p-6 rounded-2xl cyber-card border border-slate-800">
+          <span class="text-xl">🔍</span>
+          <h4 class="text-base font-bold text-white mt-3">Regex Tester</h4>
+          <p class="text-slate-400 text-xs mt-1">Reguläre Ausdrücke live testen, Matches hervorheben und Syntax prüfen.</p>
+          <span class="inline-block mt-4 text-[10px] font-mono text-cyan-400">Realtime Regex</span>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-12 border-t border-slate-800 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <span>&copy; 2026 <strong>iebLabs</strong> • All Tools 100% Free &amp; Private by <strong>ibo</strong></span>
+      <a href="https://paypal.me/iebsie" target="_blank" class="text-amber-400 hover:text-amber-300 font-mono">
+        ☕ Buy me a coffee (@iebsie)
+      </a>
+    </div>
+  </footer>
+
+</body>
+</html>
